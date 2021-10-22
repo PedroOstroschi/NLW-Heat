@@ -21,21 +21,21 @@
             alt="Foto de Pedro Ostroschi"
           />
         </div>
-        <h1>Pedro Ostroschi</h1>
+        <h1 id="userName">Pedro Ostroschi</h1>
         <a href="https://github.com/PedroOstroschi">
           <img src="images/github.svg" alt="Icone github" />
           pedroostroschi</a
         >
 
-        <p>Texto</p>
+        <p>Estudando Engenharia da Computação na UTFPR</p>
 
-        <ul>
-          <li>
+        <ul id="socialLinks">
+          <li class="isntagram">
             <a href="https://www.instagram.com/pedro2535" target="_blank">
               <img src="images/Instagram.svg" alt="Icone instagram" />
             </a>
           </li>
-          <li>
+          <li class="facebook">
             <a
               href="https://www.facebook.com/pedro.tangerino.3/"
               target="_blank"
@@ -43,7 +43,7 @@
               <img src="images/Facebook.svg" alt="Icone facebook" />
             </a>
           </li>
-          <li>
+          <li class="twitter">
             <a href="https://twitter.com/OstroschiPedro" target="_blank">
               <img src="images/Twitter.svg" alt="Icone twitter" />
             </a>
@@ -51,5 +51,25 @@
         </ul>
       </div>
     </main>
+
+    <script>
+      const link = {
+        github: 'PedroOstroschi',
+        instagram: 'pedro2535',
+        facebook: 'pedro.tangerino.3',
+        twitter: 'OstroschiPedro'
+      }
+
+      function changeSocialMediaLinks() {
+        for (let li of socialLinks) {
+          const social = li.getAttribute('class')
+          li.chilren[0].href = `https://${social}.com/${link[social]}`
+          
+          alert(li.chilren[0].href)
+        }
+      }
+
+      changeSocialMediaLinks()
+    </script>
   </body>
 </html>
